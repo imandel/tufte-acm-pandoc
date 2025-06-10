@@ -1,3 +1,6 @@
+# Academic Paper Pandoc Defaults
+# Usage: pandoc paper.tex --defaults=academic-paper.yaml --bibliography=refs.bib -o paper.html
+
 # Input/Output settings
 from: latex
 to: html5
@@ -5,13 +8,13 @@ standalone: true
 
 # Filters (order matters!)
 filters:
-  - citet-filter                    # custom citation filter (requires: uv tool install)
-  - pandoc-sidenote                 # Convert \footnote to sidenotes (requires: brew install pandoc-sidenote)
-  - pandoc-tex-numbering            # Number equations/figures (requires: uv tool install pandoc-tex-numbering)
+  - citet-filter                    # Our custom citation filter (requires: uv tool install)
+  - pandoc-sidenote                 # Convert \footnote to sidenotes (requires: pip install pandoc-sidenote)
+  - pandoc-tex-numbering            # Number equations/figures (requires: pip install pandoc-tex-numbering)
 
 # Lua filters
 lua-filters:
-  - https://cdn.jsdelivr.net/gh/imandel/tufte-acm-pandoc@main/assets/acm-metadata-extractor.lua
+  - https://cdn.jsdelivr.net/gh/imandel/tufte-acm-pandoc@main/lua-filters/acm-metadata-extractor.lua
 
 # Citation processing
 citeproc: true
@@ -19,11 +22,14 @@ csl: https://raw.githubusercontent.com/citation-style-language/styles/master/acm
 
 # CSS and JavaScript
 css:
-  - https://cdn.jsdelivr.net/gh/imandel/tufte-acm-pandoc@main/assets/academic-paper.css
+  - https://cdn.jsdelivr.net/gh/imandel/tufte-acm-pandoc@main/assets/acm-tufte.css
 
 include-in-header:
   - '<script src="https://cdn.jsdelivr.net/gh/imandel/tufte-acm-pandoc@main/assets/script.js"></script>'
   - '<meta name="viewport" content="width=device-width, initial-scale=1">'
+
+# Word wrapping
+wrap: preserve
 
 # Metadata variables
 variables:
@@ -33,19 +39,12 @@ variables:
   # Equation/figure numbering
   number-reset-level: 0
   block-headings: true
+  section-max-levels: 3
+  section-prefix: ""
   
   # HTML structure
   lang: en
   document-css: false              # Don't include default pandoc CSS
-  
-  # Typography
-  mainfont: "Georgia, serif"
-  sansfont: "Helvetica, Arial, sans-serif"
-  monofont: "Consolas, Monaco, monospace"
-
-# Math settings
-html-math-method: mathjax
-mathjax-url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 
 # Table of contents
 table-of-contents: false          # Set to true if you want a TOC
