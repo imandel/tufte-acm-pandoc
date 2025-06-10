@@ -1,0 +1,59 @@
+# Input/Output settings
+from: latex
+to: html5
+standalone: true
+
+# Filters (order matters!)
+filters:
+  - citet-filter                    # custom citation filter (requires: uv tool install)
+  - pandoc-sidenote                 # Convert \footnote to sidenotes (requires: brew install pandoc-sidenote)
+  - pandoc-tex-numbering            # Number equations/figures (requires: uv tool install pandoc-tex-numbering)
+
+# Lua filters
+lua-filters:
+  - https://cdn.jsdelivr.net/gh/imandel/tufte-acm-pandoc@main/assets/acm-metadata-extractor.lua
+
+# Citation processing
+citeproc: true
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/acm-sig-proceedings.csl
+
+# CSS and JavaScript
+css:
+  - https://cdn.jsdelivr.net/gh/imandel/tufte-acm-pandoc@main/assets/academic-paper.css
+
+include-in-header:
+  - '<script src="https://cdn.jsdelivr.net/gh/imandel/tufte-acm-pandoc@main/assets/script.js"></script>'
+  - '<meta name="viewport" content="width=device-width, initial-scale=1">'
+
+# Metadata variables
+variables:
+  # Citation settings
+  link-citations: true
+  
+  # Equation/figure numbering
+  number-reset-level: 0
+  block-headings: true
+  
+  # HTML structure
+  lang: en
+  document-css: false              # Don't include default pandoc CSS
+  
+  # Typography
+  mainfont: "Georgia, serif"
+  sansfont: "Helvetica, Arial, sans-serif"
+  monofont: "Consolas, Monaco, monospace"
+
+# Math settings
+html-math-method: mathjax
+mathjax-url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+
+# Table of contents
+table-of-contents: false          # Set to true if you want a TOC
+toc-depth: 3
+
+# Template settings
+template: null                     # Use default HTML5 template
+
+# File handling
+extract-media: ./media            # Extract images to media folder
+resource-path: ["."]              # Look for resources in current directory

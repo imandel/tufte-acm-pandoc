@@ -1,0 +1,15 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "citet-filter"
+version = "0.1.0"
+description = "Pandoc filter for academic citation formatting"
+dependencies = ["panflute>=2.3.0", "pybtex>=0.24.0", "setuptools"]
+
+[project.scripts]
+citet-filter = "citet_filter:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/citet_filter"]
