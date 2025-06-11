@@ -8,34 +8,27 @@ standalone: true
 
 # Filters (order matters!)
 filters:
-  - citet-filter                    # Our custom citation filter (requires: uv tool install)
-  - pandoc-sidenote                 # Convert \footnote to sidenotes (requires: pip install pandoc-sidenote)
-  - pandoc-tex-numbering            # Number equations/figures (requires: pip install pandoc-tex-numbering)
-
-# Lua filters
-lua-filters:
-  - https://cdn.jsdelivr.net/gh/imandel/tufte-acm-pandoc@main/lua-filters/acm-metadata-extractor.lua
+  - tufte-filter          # Our custom citation filter (requires: uv tool install)
+  - pandoc-sidenote       # Convert \footnote to sidenotes (requires: pip install pandoc-sidenote)
+  - pandoc-tex-numbering  # Number equations/figures (requires: pip install pandoc-tex-numbering)
 
 # Citation processing
 citeproc: true
 csl: https://raw.githubusercontent.com/citation-style-language/styles/master/acm-sig-proceedings.csl
 
-# CSS and JavaScript
+# Metadata
+metadata:
+  link-citations: true
+
+# CSS
 css:
   - https://cdn.jsdelivr.net/gh/imandel/tufte-acm-pandoc@main/assets/acm-tufte.css
-
-include-in-header:
-  - '<script src="https://cdn.jsdelivr.net/gh/imandel/tufte-acm-pandoc@main/assets/script.js"></script>'
-  - '<meta name="viewport" content="width=device-width, initial-scale=1">'
 
 # Word wrapping
 wrap: preserve
 
 # Metadata variables
 variables:
-  # Citation settings
-  link-citations: true
-  
   # Equation/figure numbering
   number-reset-level: 0
   block-headings: true

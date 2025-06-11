@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* =============================================================================
-   TUFTE-INSPIRED ACADEMIC PAPER CSS
+   TUFTE-INSPIRED ACM CSS
    For LaTeX to HTML conversion with pandoc-tex-numbering
    ============================================================================= */
 
@@ -1008,5 +1008,20 @@ label.margin-toggle {
     
     h1 {
         font-size: 2rem;
+    }
+}
+
+/* quick fix */
+html {
+    overflow-x: hidden;
+}
+
+@media (max-width: 760px) {
+    .sidenote {
+        display: none !important;
+    }
+    
+    .citation-back-button {
+        display: none;
     }
 }

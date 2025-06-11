@@ -19,6 +19,7 @@ then:
 pandoc main.tex \
   --defaults=tufte-acm.yaml \
   --bibliography=your_bib_file.bib \
+  -H <(echo '<script src="https://cdn.jsdelivr.net/gh/imandel/tufte-acm-pandoc@main/assets/script.js"></script>') \
   -o paper.html
 ```
 
