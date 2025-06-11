@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Entry point for the citation filter."""
+"""Entry point for the filter."""
 
 from .main import main
 

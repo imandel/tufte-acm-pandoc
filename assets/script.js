@@ -11,25 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
         backButton = document.createElement('button');
         backButton.innerHTML = '↩';
         backButton.className = 'citation-back-button';
-        backButton.style.cssText = `
-            position: absolute;
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-family: et-book, Georgia, serif;
-            cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s;
-            top: -8px;
-            right: -80px;
-            white-space: nowrap;
-        `;
         
         // Handle back button click
         backButton.addEventListener('click', function() {
@@ -117,13 +98,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
-    
-    // Dark mode support
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        setTimeout(() => {
-            if (backButton) {
-                backButton.style.backgroundColor = '#65b0ee';
-            }
-        }, 100);
-    }
 });
