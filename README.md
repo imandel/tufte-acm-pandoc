@@ -4,7 +4,7 @@ This is a work in progress.
 ## Installation
 ```bash
 brew install jez/formulae/pandoc-sidenote
-uv tool install pandoc-tex-numbering
+uv tool install git+https://github.com/imandel/tufte-acm-pandoc
 uv tool install git+https://github.com/imandel/pandoc-tex-numbering 
 ```
 
