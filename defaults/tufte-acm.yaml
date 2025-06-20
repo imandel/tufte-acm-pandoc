@@ -9,16 +9,16 @@ standalone: true
 # Filters (order matters!)
 filters:
   - tufte-filter          # Our custom citation filter (requires: uv tool install)
-  - pandoc-sidenote       # Convert \footnote to sidenotes (requires: pip install pandoc-sidenote)
+  - pandoc-sidenote       # Convert \footnote to sidenotes (requires: brew install pandoc-sidenote)
   - pandoc-tex-numbering  # Number equations/figures (requires: pip install pandoc-tex-numbering)
+
+include-in-header:
+  - text: |
+      <script src="https://cdn.jsdelivr.net/gh/imandel/tufte-acm-pandoc@main/assets/script.js"></script>
 
 # Citation processing
 citeproc: true
 csl: https://raw.githubusercontent.com/citation-style-language/styles/master/acm-sig-proceedings.csl
-
-# Metadata
-metadata:
-  link-citations: true
 
 # CSS
 css:
@@ -28,12 +28,15 @@ css:
 wrap: preserve
 
 # Metadata variables
-variables:
+metadata:
   # Equation/figure numbering
   number-reset-level: 0
   block-headings: true
+  number-sections: true
   section-max-levels: 3
   section-prefix: ""
+  link-citations: true
+  data-export-path: "debug-data.json"
   
   # HTML structure
   lang: en
@@ -48,4 +51,4 @@ template: null                     # Use default HTML5 template
 
 # File handling
 extract-media: ./media            # Extract images to media folder
-resource-path: ["."]              # Look for resources in current directory
+resource-path: ["."]              # Look for resources in current directory% 
