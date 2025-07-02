@@ -188,6 +188,12 @@ h3 {
     line-height: var(--line-height-heading);
     color: var(--color-heading);
 }
+h4 {
+    font-style: italic;
+    font-weight: 400;
+    font-size: var(--font-size-lg);
+    color: var(--color-heading);
+}
 
 p,
 dl,
@@ -379,8 +385,9 @@ caption {
     clear: right;
     margin-top: var(--space-md);
     margin-bottom: 0;
-    font-size: var(--font-size-sm);
-    line-height: calc(var(--font-size-sm) * var(--line-height-base));
+    /* font-size: var(--font-size-sm); */
+    font-family: var(--font-family-serif); 
+    line-height: var(--line-height-tight);
     vertical-align: baseline;
     position: absolute;
     top: 0;
@@ -388,7 +395,6 @@ caption {
     max-width: var(--content-width);
     width: var(--sidebar-width);
     color: var(--color-text-secondary);
-    font-style: italic;
     text-align: left;
     /* Prevent overflow beyond viewport */
     max-width: calc(100vw - var(--content-width) - 2rem);
