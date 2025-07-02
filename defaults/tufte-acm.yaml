@@ -12,9 +12,6 @@ filters:
   - pandoc-sidenote       # Convert \footnote to sidenotes (requires: brew install pandoc-sidenote)
   - pandoc-tex-numbering  # Number equations/figures (requires: pip install pandoc-tex-numbering)
 
-include-in-header:
-  - text: |
-      <script src="https://cdn.jsdelivr.net/gh/imandel/tufte-acm-pandoc@main/assets/script.js"></script>
 
 # Citation processing
 citeproc: true
